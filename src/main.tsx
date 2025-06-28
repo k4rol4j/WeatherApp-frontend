@@ -1,11 +1,16 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from "./App.tsx";
+import { createRoot } from 'react-dom/client';
+import { MantineProvider } from '@mantine/core';
+import App from './App';
+import '@mantine/core/styles.css';
+import './index.css';
+import 'leaflet/dist/leaflet.css';
 
+const root = createRoot(document.getElementById('root')!);
 
-createRoot(document.getElementById('root')!).render(
-    <StrictMode>
+root.render(
+    <MantineProvider defaultColorScheme="light">
         <App />
-    </StrictMode>,
-)
+    </MantineProvider>
+);
+
+export {};
