@@ -139,7 +139,7 @@ const App: React.FC = () => {
                 </Center>
             ) : (
                 <>
-                    <Title order={2} style={{ margin: '2rem 0 1rem' }}>
+                    <Title order={2} style={{ margin: '2rem 0 1rem', textAlign: 'center' }}>
                         Prognoza na najbliższe 7 dni
                     </Title>
                     <WeatherForecast forecast={forecast} />

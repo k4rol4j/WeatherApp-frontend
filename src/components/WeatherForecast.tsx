@@ -38,6 +38,10 @@ export const WeatherForecast: React.FC<Props> = ({ forecast }) => {
                         transition: 'transform 0.2s, box-shadow 0.2s',
                         backgroundColor: isDark ? '#2c2e33' : '#f9f9f9',
                         cursor: 'pointer',
+                        flexWrap: 'nowrap',
+                        overflowX: 'auto',
+                        gap: '1rem',
+                        padding: '1rem 0',
                     }}
                     onMouseEnter={(e) => {
                         (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)';
