@@ -5,28 +5,40 @@ import { WeatherSummary } from './components/WeatherSummary';
 import type {DailyForecast, WeeklySummary} from "./types/weather.ts";
 
 function App() {
+    const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
     const [forecast, setForecast] = useState<DailyForecast[]>([]);
     const [summary, setSummary] = useState<WeeklySummary | null>(null);
 
     useEffect(() => {
-        const getData = async () => {
-            try {
-                const lat = 52;
-                const lng = 21;
-                const forecastData = await fetchForecast(lat, lng);
-                const summaryData = await fetchSummary(lat, lng);
-                setForecast(forecastData);
-                setSummary(summaryData);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        getData();
+        navigator.geolocation.getCurrentPosition(
+            (pos) => {
+                const { latitude, longitude } = pos.coords;
+                setCoords({ lat: latitude, lng: longitude });
+            },
+            (err) => console.error(err),
+            { enableHighAccuracy: true }
+        );
     }, []);
 
+    useEffect(() => {
+        if (!coords) return;
+        const getData = async () => {
+            try {
+                const f = await fetchForecast(coords.lat, coords.lng);
+                const s = await fetchSummary(coords.lat, coords.lng);
+                setForecast(f);
+                setSummary(s);
+            } catch (e) {
+                console.error(e);
+            }
+        };
+        getData();
+    }, [coords]);
+
+    if (!coords) return <p>Loading location...</p>;
+
     return (
-        <div>
+        <div className="app-container">
             <h1>Weather PV Forecast</h1>
             {forecast.length > 0 && <WeatherForecast forecast={forecast} />}
             {summary && <WeatherSummary summary={summary} />}
