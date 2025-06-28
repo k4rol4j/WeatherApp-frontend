@@ -1,16 +1,19 @@
-import { createRoot } from 'react-dom/client';
-import { MantineProvider } from '@mantine/core';
-import App from './App';
-import '@mantine/core/styles.css';
-import './index.css';
-import 'leaflet/dist/leaflet.css';
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import { MantineProvider } from '@mantine/core'
+import App from './App'
+import 'leaflet/dist/leaflet.css'
+import '@mantine/core/styles/baseline.css'
+import '@mantine/core/styles/default-css-variables.css'
+import '@mantine/core/styles/global.css'
 
-const root = createRoot(document.getElementById('root')!);
-
+const root = createRoot(document.getElementById('root')!)
 root.render(
-    <MantineProvider defaultColorScheme="light">
-        <App />
-    </MantineProvider>
-);
+    <React.StrictMode>
+        <MantineProvider >
+            <App />
+        </MantineProvider>
+    </React.StrictMode>
+)
 
-export {};
+export {}
