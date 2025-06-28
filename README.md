@@ -21,3 +21,8 @@ npm run dev
 ```bash
 http://localhost:5173
 ```
+
+Link do wdrożonej aplikacji:
+```bash
+https://weatherapp-frontend-qyl4.onrender.com/
+```
