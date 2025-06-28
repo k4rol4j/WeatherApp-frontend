@@ -19,7 +19,7 @@ export const WeatherForecast: React.FC<Props> = ({ forecast }) => {
     const isDark = colorScheme === 'dark';
 
     return (
-        <Box style={{ display: 'flex', flexWrap: 'nowrap', overflowX: 'auto', gap: '1rem', padding: '1rem 0' }}>
+        <Box style={{ display: 'flex', flexWrap: 'wrap',justifyContent: 'center', overflowX: 'auto', gap: '1rem', padding: '1rem 0' }}>
             {forecast.map((day) => (
                 <Card
                     key={day.date}
