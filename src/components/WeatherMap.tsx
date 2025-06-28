@@ -59,7 +59,7 @@ export const WeatherMap: React.FC<Props> = ({ lat, lng, onLocationSelect, onRese
             overflow: 'hidden',
             width: '100%',
             maxWidth: '100%',
-            height: 300,
+            height: '400px',
             position: 'relative',
         }}
     >
