@@ -1,23 +1,23 @@
-# 🌤️ Weather Forecast App
+# 🌤️ Weather Forecast App Frontend
 React + TypeScript + Vite
 
-## 🚀 Uruchamianie lokalnie
+## Uruchamianie lokalnie
 
-1️⃣ Sklonuj repozytorium:
+1️. Sklonuj repozytorium:
 ```bash
 git clone https://github.com/k4rol4j/WeatherApp-frontend.git
 ```
-2️⃣ Zainstaluj zależności:
+2️. Zainstaluj zależności:
 ```bash
 npm install
 ```
 
-3️⃣ Uruchom projekt:
+3️. Uruchom projekt:
 ```bash
 npm run dev
 ```
 
-4️⃣ Otwórz w przeglądarce:
+4️. Otwórz w przeglądarce:
 ```bash
 http://localhost:5173
 ```
